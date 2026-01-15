@@ -44,7 +44,7 @@ Ikuti langkah-langkah berikut secara berurutan di Terminal / Command Prompt:
 
 ### 1. Clone Repository & Masuk Folder
 ```bash
-git clone [https://github.com/Wh-Atif/web-perpustakaanmini.git](https://github.com/Wh-Atif/web-perpustakaanmini.git)
+git clone https://github.com/Wh-Atif/web-perpustakaanmini.git laravel_minilib
 cd web-perpustakaanmini
 
 ```
