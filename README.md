@@ -1,8 +1,3 @@
-Tentu, ini adalah versi **README.md** yang sangat lengkap, rapi, dan langsung bisa disalin. Saya sudah menyusun langkahnya agar penilai (dosen/asisten) bisa langsung menjalankan project tanpa bingung, memenuhi poin **Dokumentasi & Delivery**.
-
-Silakan buat file baru bernama `README.md` di folder utama project Anda, lalu salin seluruh teks di bawah ini:
-
-```markdown
 # 📚 Sistem Informasi Perpustakaan Mini
 
 Aplikasi manajemen perpustakaan sederhana berbasis web yang dibangun menggunakan **Laravel**. Aplikasi ini menangani sirkulasi peminjaman buku dengan sistem validasi stok dan pemisahan hak akses antara **Admin** dan **Anggota (User)**.
@@ -40,6 +35,8 @@ Sebelum menjalankan, pastikan komputer Anda memiliki:
 - *Koneksi Internet* (Diperlukan untuk memuat Tailwind CSS via CDN).
 
 ---
+
+
 
 ## 📥 Langkah Instalasi
 
@@ -106,6 +103,8 @@ php artisan migrate:fresh --seed
 
 ---
 
+
+
 ## 🧪 Pengujian Sistem (Automated Testing)
 
 - **Skenario Utama:** Memastikan sistem **menolak peminjaman** (gagal akses) jika stok buku bernilai **0**.
@@ -126,6 +125,8 @@ php artisan serve
 
 ```
 
+
+
 ## 🔑 Akun Demo (Credentials)
 
 Gunakan akun berikut untuk menguji fitur aplikasi:
@@ -145,6 +146,7 @@ Gunakan akun berikut untuk menguji fitur aplikasi:
 * **Password:** `12345678`
 
 
+
 ## 💻 Teknologi yang Digunakan
 
 * **Backend:** Laravel Framework (PHP).
@@ -155,13 +157,13 @@ Gunakan akun berikut untuk menguji fitur aplikasi:
 
 ---
 
-**Dibuat untuk memenuhi tugas UAS Pemrograman Web .**
 
-**DAFTAR PENCARIAN ORANG**
-*2402310223 – Moh. Hasrul Hidayah Tullah*
-*2402310225 – Moh. Atif Fauzan*
-*2402310233 – Qorin Sifa Eka Fasba*
 
-```
+**Dibuat untuk memenuhi tugas UAS Pemrograman Web.**
 
-```
+**Anggota Kelompok**
+* *2402310223 – Moh. Hasrul Hidayah Tullah*
+* *2402310225 – Moh. Atif Fauzan*
+* *2402310233 – Qorin Sifa Eka Fasba*
+
+2026 - 01 - 14
