@@ -28,7 +28,7 @@ class BorrowingController extends Controller
             });
         }
 
-        $borrowings = $query->latest()->get();
+        $borrowings = $query->latest()->paginate(10);
 
         return view('admin.borrowings.index', compact('borrowings'));
     }

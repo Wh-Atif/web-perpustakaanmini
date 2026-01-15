@@ -11,9 +11,17 @@ class BorrowingPolicy
 
     public function before(User $user, string $ability)
     {
-        if ($user->isAdmin()) {
+        if ($user->role === 'admin') {
             return true;
         }
+    }
+
+    /**
+     * Determine whether the user can view anything of the model.
+     */
+    public function viewAny(User $user)
+    {
+        return $user->role === 'admin';
     }
 
     /**

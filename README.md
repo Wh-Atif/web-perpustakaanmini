@@ -1,59 +1,167 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Tentu, ini adalah versi **README.md** yang sangat lengkap, rapi, dan langsung bisa disalin. Saya sudah menyusun langkahnya agar penilai (dosen/asisten) bisa langsung menjalankan project tanpa bingung, memenuhi poin **Dokumentasi & Delivery**.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Silakan buat file baru bernama `README.md` di folder utama project Anda, lalu salin seluruh teks di bawah ini:
 
-## About Laravel
+```markdown
+# 📚 Sistem Informasi Perpustakaan Mini
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aplikasi manajemen perpustakaan sederhana berbasis web yang dibangun menggunakan **Laravel**. Aplikasi ini menangani sirkulasi peminjaman buku dengan sistem validasi stok dan pemisahan hak akses antara **Admin** dan **Anggota (User)**.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Fitur Utama
 
-## Learning Laravel
+### 🔐 Otentikasi & Keamanan
+- **Login & Register Manual** (Tanpa Starter Kit Breeze/Jetstream).
+- **Multi-Role:** Pembedaan akses Admin dan User menggunakan Middleware & Gate.
+- **Keamanan:** Route Admin terproteksi, User tidak bisa akses halaman Admin.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 👤 Role: User (Anggota)
+- Melihat **Katalog Buku** dengan informasi stok real-time.
+- **Pencarian & Filter** buku berdasarkan Judul, Pengarang, atau Kategori.
+- **Peminjaman Mandiri** (Maksimal 3 buku, Stok berkurang otomatis).
+- Melihat **Riwayat Peminjaman** pribadi dan status pengembalian.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🛠 Role: Admin (Pustakawan)
+- **Dashboard Statistik:** Ringkasan total buku, anggota, dan transaksi aktif.
+- **Manajemen Buku (CRUD):** Tambah, Edit, Hapus buku dan stok.
+- **Manajemen Sirkulasi:** Validasi pengembalian buku (Stok bertambah otomatis saat dikembalikan).
+- Filter data transaksi berdasarkan status (Dipinjam/Dikembalikan).
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## ⚙️ Persyaratan Sistem (Requirements)
 
-### Premium Partners
+Sebelum menjalankan, pastikan komputer Anda memiliki:
+- **PHP** >= 8.1
+- **Composer**
+- **MySQL** (via XAMPP/Laragon/DBngin)
+- **Web Browser** (Chrome/Firefox/Edge)
+- *Koneksi Internet* (Diperlukan untuk memuat Tailwind CSS via CDN).
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 📥 Langkah Instalasi
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Ikuti langkah-langkah berikut secara berurutan di Terminal / Command Prompt:
 
-## Code of Conduct
+### 1. Clone Repository & Masuk Folder
+```bash
+git clone [https://github.com/Wh-Atif/web-perpustakaanmini.git](https://github.com/Wh-Atif/web-perpustakaanmini.git)
+cd web-perpustakaanmini
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
 
-## Security Vulnerabilities
+### 2. Install Dependency
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Mengunduh pustaka Laravel yang dibutuhkan.
 
-## License
+```bash
+composer install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+
+### 3. Konfigurasi Environment (.env)
+
+Menyalin file konfigurasi contoh menjadi file konfigurasi aktif.
+
+```bash
+cp .env.example .env
+
+```
+
+### 4. Generate Key Aplikasi
+
+Membuat kunci enkripsi unik untuk sesi aplikasi.
+
+```bash
+php artisan key:generate
+
+```
+
+### 5. Konfigurasi Database
+
+1. Buka aplikasi database manager Anda (phpMyAdmin / HeidiSQL).
+2. Buat database baru dengan nama: **`perpustakaan_mini`**
+3. Buka file **`.env`** di text editor, pastikan konfigurasi database sesuai:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=perpustakaan_mini
+DB_USERNAME=root
+DB_PASSWORD=
+
+```
+
+### 6. Migrasi & Seeding Data (PENTING) ⚠️
+
+Langkah ini akan membuat tabel di database sekaligus mengisi **Data Dummy** dan **Akun Login**.
+
+```bash
+php artisan migrate:fresh --seed
+
+```
+
+---
+
+## 🧪 Pengujian Sistem (Automated Testing)
+
+- **Skenario Utama:** Memastikan sistem **menolak peminjaman** (gagal akses) jika stok buku bernilai **0**.
+
+Untuk menjalankan pengujian, jalankan perintah berikut di terminal:
+
+```bash
+php artisan test
+
+```
+
+## ▶️ Jalankan Aplikasi
+
+Jalankan server lokal Laravel dengan perintah:
+
+```bash
+php artisan serve
+
+```
+
+## 🔑 Akun Demo (Credentials)
+
+Gunakan akun berikut untuk menguji fitur aplikasi:
+
+### 👨‍💼 Akun Administrator
+
+*Akses penuh ke menu Admin (Dashboard, CRUD Buku, Validasi Pengembalian).*
+
+* **Email:** `admin@perpus.com`
+* **Password:** `12345678`
+
+### 🧑‍🎓 Akun Anggota (User)
+
+*Akses ke Katalog Buku dan Peminjaman Saya.*
+
+* **Email:** `user@perpus.com`
+* **Password:** `12345678`
+
+
+## 💻 Teknologi yang Digunakan
+
+* **Backend:** Laravel Framework (PHP).
+* **Frontend:** Blade Templating Engine.
+* **Styling:** Tailwind CSS (CDN Version).
+* **Database:** MySQL.
+* **Icons:** FontAwesome.
+
+---
+
+**Dibuat untuk memenuhi tugas UAS Pemrograman Web .**
+
+**DAFTAR PENCARIAN ORANG**
+*2402310223 – Moh. Hasrul Hidayah Tullah*
+*2402310225 – Moh. Atif Fauzan*
+*2402310233 – Qorin Sifa Eka Fasba*
+
+```
+
+```

@@ -3,38 +3,35 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category; 
 use Illuminate\Http\Request;
 
-class BookUserController extends Controller
+class BookController extends Controller
 {
-    /**
-     * Menampilkan daftar buku (user)
-     */
     public function index(Request $request)
     {
-        $query = Book::query();
+        $categories = Category::all(); 
 
-        // filter keyword judul
+        $query = Book::with('category'); 
+
         if ($request->keyword) {
-            $query->where('title', 'like', '%' . $request->keyword . '%');
+            $query->where(function($q) use ($request) {
+                $q->where('title', 'like', '%' . $request->keyword . '%')
+                  ->orWhere('author', 'like', '%' . $request->keyword . '%');
+            });
         }
 
-        // filter kategori
-        if ($request->category) {
-            $query->where('category', $request->category);
+        if ($request->category_id) {
+            $query->where('category_id', $request->category_id);
         }
 
-        // hanya buku yang stoknya >= 0
-        $books = $query->orderBy('title')->get();
+        $books = $query->orderBy('title')->paginate(12);
 
-        return view('books.user.index', compact('books'));
+        return view('books.index', compact('books', 'categories'));
     }
-
-    /**
-     * Detail buku
-     */
+    
     public function show(Book $book)
     {
-        return view('books.user.show', compact('book'));
+        return view('books.show', compact('book'));
     }
 }
